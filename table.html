@@ -56,7 +56,7 @@
 
             for (const customer of data) {
                 const tableList = $('<ul>').addClass('list-group');
-                const table = $('<li>').text('Name: ' + customer.customerName);
+                const table = $('<li>').text('Name: ' + customer.name);
                 table.addClass('list-group-item');
                 tableList.append(table);
                 $('#currentTables').append(tableList);
