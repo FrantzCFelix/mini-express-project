@@ -15,10 +15,10 @@ app.use(express.json());
 // data
 let tables = [
     {
-        customerName: 'table-1',
-        customerEmail: 'test@test.com',
-        phoneNumber: '555-555-5555',
-        customerID: 1,
+        name: 'table-1',
+        email: 'test@test.com',
+        phone: '555-555-5555',
+        id: 1,
     }
 ];
 
