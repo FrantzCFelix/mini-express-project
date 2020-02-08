@@ -55,10 +55,12 @@
             console.log(data);
 
             for (const customer of data) {
-                const tableList = $('<ul>').addClass('list-group');
-                const table = $('<li>').text('Name: ' + customer.name);
-                table.addClass('list-group-item');
-                tableList.append(table);
+                const tableList = $('<ul>').addClass('list-group mt-4');
+                const tableID = $('<li>').text('ID: ' + customer.id).addClass('list-group-item');
+                const tableName = $('<li>').text('Name: ' + customer.name).addClass('list-group-item');
+                const tableEmail = $('<li>').text('Email: ' + customer.email).addClass('list-group-item');
+                const tablePhone = $('<li>').text('Phone: ' + customer.phone).addClass('list-group-item');
+                tableList.append(tableID, tableName, tableEmail, tablePhone);
                 $('#currentTables').append(tableList);
             }
         });
