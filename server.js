@@ -41,8 +41,8 @@ app.get('/reserve', (req, res) => res.sendFile(path.join(__dirname, 'reserve.htm
 // Displays waitlist
 //app.get('/api/waitlist', (req, res) => res.json(waitlist));
 //Displays Tables
-//app.get('/api/waitlist', (req, res) => res.json(tables));
-// Displays a single character or returns false
+app.get('/api/tables', (req, res) => res.json(tables));
+ //Displays a single character or returns false
 
 // creates new reservations - takes JSON input
 // pretty sure this will be very similar to the starwars
