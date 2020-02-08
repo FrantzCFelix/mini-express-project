@@ -54,14 +54,13 @@
         $.get('/api/tables/', function(data) {
             console.log(data);
 
-
-            // if (data.length <= 5) {
-            //     for (const reservation of data) {
-            //         const table = $('<ul>').text(data.name);
-            //             $('#borderThis').append(table);
-            //     }
-            // } else {
-            // }
+            for (const customer of data) {
+                const tableList = $('<ul>').addClass('list-group');
+                const table = $('<li>').text('Name: ' + customer.customerName);
+                table.addClass('list-group-item');
+                tableList.append(table);
+                $('#currentTables').append(tableList);
+            }
         });
     </script>
 </body>
