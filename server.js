@@ -13,6 +13,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // data
+let tables = [
+    {
+        routeName: 'table-1',
+        name: 'test',
+        email: 'test@test.com',
+        phone: '555-555-5555',
+        id: 1,
+    }
+];
 
 // =============================================================
 // Routes
@@ -31,6 +40,21 @@ app.get('/reserve', (req, res) => res.sendFile(path.join(__dirname, 'reserve.htm
 //Displays Tables
 //app.get('/api/waitlist', (req, res) => res.json(tables));
 // Displays a single character or returns false
+
+// creates new reservations - takes JSON input
+// pretty sure this will be very similar to the starwars
+// can edit it later
+app.post('/api/reservations', (req, res) => {
+    const newReservation = req.body;
+
+    newReservation.routeName = replace(/\s+/g, '').toLowerCase();
+
+    console.log(newReservation);
+
+    tables.push(newReservation);
+
+    res.json(newReservation);
+});
 
 //listening
 app.listen(PORT, () => console.log('App listening on PORT ' + PORT));
