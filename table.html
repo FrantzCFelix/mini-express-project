@@ -42,9 +42,9 @@
         <div class="row">Control Panel</div>
         <div class="row">
             <div>
-                <a href="#">API Table |</a> </div>
+                <a href="/api/tables">API Table |</a> </div>
             <div>
-                <a href="#"> API Link</a></div>
+                <a href="/api/waitlist"> API Link</a></div>
         </div>
     </div>
 
@@ -53,11 +53,15 @@
     <script>
         $.get('/api/tables/', function(data) {
             console.log(data);
-            if (data.length <= 5) {
-                // add to tableList.
-            } else {
-                // add after 5 to waitList
-            }
+
+
+            // if (data.length <= 5) {
+            //     for (const reservation of data) {
+            //         const table = $('<ul>').text(data.name);
+            //             $('#borderThis').append(table);
+            //     }
+            // } else {
+            // }
         });
     </script>
 </body>
