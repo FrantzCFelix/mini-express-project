@@ -14,14 +14,17 @@ app.use(express.json());
 
 // data
 let tables = [
-    {
-        routeName: 'table-1',
-        name: 'test',
-        email: 'test@test.com',
-        phone: '555-555-5555',
-        id: 1,
-    }
+    // {
+    //     routeName: 'table-1',
+    //     name: 'test',
+    //     email: 'test@test.com',
+    //     phone: '555-555-5555',
+    //     id: 1,
+    // }
 ];
+
+
+
 
 // =============================================================
 // Routes
@@ -46,8 +49,6 @@ app.get('/reserve', (req, res) => res.sendFile(path.join(__dirname, 'reserve.htm
 // can edit it later
 app.post('/api/reservations', (req, res) => {
     const newReservation = req.body;
-
-    newReservation.routeName = replace(/\s+/g, '').toLowerCase();
 
     console.log(newReservation);
 
