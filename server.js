@@ -6,7 +6,7 @@ const path = require('path');
 
 // setup
 const app = express();
-const PORT = process.env.PORT;
+const PORT = 3000;
 
 // handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -32,3 +32,5 @@ app.get('/reserve', (req, res) => res.sendFile(path.join(__dirname, 'reserve.htm
 //app.get('/api/waitlist', (req, res) => res.json(tables));
 // Displays a single character or returns false
 
+//listening
+app.listen(PORT, () => console.log('App listening on PORT ' + PORT));
