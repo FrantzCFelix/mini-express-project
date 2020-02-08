@@ -47,5 +47,18 @@
                 <a href="#"> API Link</a></div>
         </div>
     </div>
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script>
+        $.get('/api/tables/', function(data) {
+            console.log(data);
+            if (data.length <= 5) {
+                // add to tableList.
+            } else {
+                // add to waitList
+            }
+        });
+    </script>
 </body>
 </html>
