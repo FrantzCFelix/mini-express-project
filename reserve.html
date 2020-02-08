@@ -17,8 +17,13 @@
                 <h1>Hot Restaurant</h1>
                 <hr/>
                 <h3>Make your reservation</h3>
-                <button class="btn  btn-primary text-center"> View Tables </button>
-                <button class="btn  btn-light text-center"> Home</button>
+                <a href="./table.html">
+                    <button class="btn  btn-primary text-center"> View Tables </button>
+                </a>
+                <a href="./home.html">
+                    <button class="btn  btn-light text-center"> Home</button>
+                </a>
+                
            </div> 
         </div>
 
@@ -49,12 +54,42 @@
     <div class="container">
         <div class="row">
             <div>
-                Api Table
-            </div>
+                <a href="#">API Table |</a> </div>
             <div>
-                Api Link
-            </div>
+                <a href="#"> API Link</a></div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script>
+      // Question: What does this code do?
+      $('#add-btn').on('click', event => {
+        event.preventDefault();
+        const newReservation = {
+          name: $('#name')
+            .val()
+            .trim(),
+            email: $('#email')
+            .val()
+            .trim(),
+        phone: $('#phoneNumber')
+            .val()
+            .trim(),
+          id: $('#uniqueID')
+            .val()
+            .trim()
+        };
+
+        // Question: What does this code do??
+        $.post('/api/tables', newReservation)
+          .then(data => {
+            console.log('reserve.html', data);
+            alert(`Added ${data.name}!`);
+          })
+          .fail(err => console.error(err));
+
+          
+      });
+    </script>
 </body>
 </html>
