@@ -14,13 +14,12 @@ app.use(express.json());
 
 // data
 let tables = [
-    // {
-    //     routeName: 'table-1',
-    //     name: 'test',
-    //     email: 'test@test.com',
-    //     phone: '555-555-5555',
-    //     id: 1,
-    // }
+    {
+        name: 'table-1',
+        email: 'test@test.com',
+        phone: '555-555-5555',
+        id: 1,
+    }
 ];
 
 

@@ -27,11 +27,11 @@
                 
            </div> 
         </div>
-        <div id="borderThis" class="container rounded">
+        <div id="currentTables" class="container rounded">
             <h2>Current Reservations</h2>
             <hr> 
         </div>
-        <div id="borderThis" class="container rounded ">
+        <div id="waitingTables" class="container rounded ">
             <h2>Waiting List </h2>
             <hr>
 
@@ -42,9 +42,9 @@
         <div class="row">Control Panel</div>
         <div class="row">
             <div>
-                <a href="#">API Table |</a> </div>
+                <a href="/api/tables">API Table |</a> </div>
             <div>
-                <a href="#"> API Link</a></div>
+                <a href="/api/waitList"> API Wait List</a></div>
         </div>
     </div>
 
@@ -53,10 +53,15 @@
     <script>
         $.get('/api/tables/', function(data) {
             console.log(data);
-            if (data.length <= 5) {
-                // add to tableList.
-            } else {
-                // add to waitList
+
+            for (const customer of data) {
+                const tableList = $('<ul>').addClass('list-group mt-4');
+                const tableID = $('<li>').text('ID: ' + customer.id).addClass('list-group-item');
+                const tableName = $('<li>').text('Name: ' + customer.name).addClass('list-group-item');
+                const tableEmail = $('<li>').text('Email: ' + customer.email).addClass('list-group-item');
+                const tablePhone = $('<li>').text('Phone: ' + customer.phone).addClass('list-group-item');
+                tableList.append(tableID, tableName, tableEmail, tablePhone);
+                $('#currentTables').append(tableList);
             }
         });
     </script>
